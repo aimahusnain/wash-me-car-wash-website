@@ -8,7 +8,6 @@ import Autoplay from "embla-carousel-autoplay";
 interface Review {
   reviewer_name: string;
   rating: number;
-  reviewer_picture_url: string;
   message: string;
 }
 
