@@ -27,7 +27,8 @@ const Home: React.FC = () => {
         alt="WashHouse Image"
         width={400}
         height={146}
-        priority
+                      loading="lazy"
+
         className="w-full"
       />
       </Suspense>

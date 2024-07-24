@@ -49,7 +49,8 @@ const GiftCertificate: React.FC = () => {
             alt="Gift Certificate Image"
             width={600}
             loading="lazy"
-            height={200}
+        height={200}
+        
             className="sm:mb-0 mb-5 w-full transform hover:scale-105 transition-transform duration-300"
           />
     </div>

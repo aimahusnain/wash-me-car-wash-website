@@ -91,7 +91,7 @@ const Facilities = () => {
       width={100}
       height={75}
       className={className}
-      priority
+                    loading="lazy"
     />
   );
 

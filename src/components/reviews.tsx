@@ -1,13 +1,7 @@
 import React, { useState, useRef, useCallback } from "react";
 import { Star } from "lucide-react";
 import Link from "next/link";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+
 import { CldImage } from "next-cloudinary";
 import Autoplay from "embla-carousel-autoplay";
 
@@ -61,12 +55,13 @@ const RenderStars: React.FC<{ rating: number }> = React.memo(({ rating }) => {
 RenderStars.displayName = 'RenderStars';
 
 const ReviewItem: React.FC<{ review: Review }> = React.memo(({ review }) => (
-  <div className="p-2 border border-white rounded-lg py-3 sm:py-5 w-full h-full ml-3">
+  <div className="p-2 border border-white rounded-lg py-3 sm:py-5 w-full h-[210px] ml-3">
     <div className="flex gap-3 items-center">
       <CldImage
         loading="lazy"
         width={45}
         height={45}
+        
         src={review.reviewer_picture_url}
         alt={`Image for ${review.reviewer_name}`}
       />
@@ -99,41 +94,29 @@ const Reviews: React.FC = () => {
         What our customers say
       </div>
       <div className="flex flex-col gap-2 justify-center items-center w-full bg-primaryBlue-200 text-white py-7 px-4 mt-4">
-        <Link
+        <div className="flex gap-3">
+                 <Link
           href="https://www.google.com/search?hl=en-BR&gl=br&q=Wash+Me+Car+Wash,+1953+9th+Ave,+Longview,+WA+98632,+United+States&ludocid=4750013286135008027&lsig=AB86z5V2TG630eID1b_fI-RNBxns#lrd=0x54946c94ec9bed79:0x41eb6feac6768b1b,3"
           className="bg-primaryGreen text-black px-3 py-2 rounded-lg text-lg mb-3 w-fit ml-auto"
         >
           Write a review
         </Link>
-        <div className="flex w-full justify-center items-center">
-          <Carousel
-            plugins={[plugin.current]}
-            className="w-full text-black"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            <CarouselContent>
+                <Link
+                  href="https://www.google.com/maps/place/Wash+Me+Car+Wash/@46.14486,-122.9305678,17z/data=!3m1!4b1!4m17!1m8!4m7!1m0!1m5!1m1!1s0x54946c94ec9bed79:0x41eb6feac6768b1b!2m2!1d-122.9280156!2d46.1448855!3m7!1s0x54946c94ec9bed79:0x41eb6feac6768b1b!8m2!3d46.14486!4d-122.9279929!9m1!1b1!16s%2Fg%2F1tds6drw?entry=ttu"
+          className="bg-primaryGreen ml-3 text-black px-3 py-2 rounded-lg text-lg mb-3 w-fit ml-auto"
+        >
+          View More Reviews
+        </Link>
+ </div>
+        <div className="flex w-full h justify-center items-center">
               {reviews.map((review, index) => (
-                <CarouselItem
+                <div
                   key={index}
                   className="pl-1 md:basis-1/2 text-white lg:basis-1/3 px-3 sm:px-6"
                 >
                   <ReviewItem review={review} />
-                </CarouselItem>
+                </div>
               ))}
-              <CarouselItem className="pl-1 md:basis-1/1 text-white lg:basis-1/3 px-3 flex justify-center items-center">
-                <Link
-                  href="https://www.google.com/maps/place/Wash+Me+Car+Wash/@46.14486,-122.9305678,17z/data=!3m1!4b1!4m17!1m8!4m7!1m0!1m5!1m1!1s0x54946c94ec9bed79:0x41eb6feac6768b1b!2m2!1d-122.9280156!2d46.1448855!3m7!1s0x54946c94ec9bed79:0x41eb6feac6768b1b!8m2!3d46.14486!4d-122.9279929!9m1!1b1!16s%2Fg%2F1tds6drw?entry=ttu"
-                  target="_blank"
-                  className="bg-primaryGreen p-4 rounded-xl mt-6"
-                >
-                  View More Reviews
-                </Link>
-              </CarouselItem>
-            </CarouselContent>
-            <CarouselPrevious className="left-1" />
-            <CarouselNext className="right-1" />
-          </Carousel>
         </div>
       </div>
     </div>

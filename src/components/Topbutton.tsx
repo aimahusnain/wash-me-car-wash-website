@@ -1,12 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
 import Image from "next/image";
 
 const GoTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const controls = useAnimation();
 
   const goToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -33,18 +31,12 @@ const GoTopButton = () => {
     }
   }, []);
 
-  useEffect(() => {
-    controls.start({ opacity: isVisible ? 1 : 0, scale: isVisible ? 1 : 0 });
-  }, [isVisible, controls]);
 
   return (
-    <motion.button
+    <button
       id="goTopBtn"
       className="fixed bottom-[7px] right-4 bg-gradient-to-tr pt-6 px-3 text-sm from-black/70 to-black/20 text-white p-2 rounded-md cursor-pointer"
       onClick={goToTop}
-      initial={{ opacity: 0, scale: 0 }}
-      animate={controls}
-      transition={{ duration: 0.3 }}
     >
       Go Top
       <Image
@@ -55,7 +47,7 @@ const GoTopButton = () => {
         height={30}
         loading="lazy"
       />
-    </motion.button>
+    </button>
   );
 };
 
