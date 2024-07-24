@@ -32,7 +32,7 @@ const Home: React.FC = () => {
       />
       </Suspense>
       <Map /> 
-      <Facilities />
+      {/* <Facilities /> */}
       <WhatWeDo />
       <Team />
       <Pricing />
