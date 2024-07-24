@@ -1,9 +1,6 @@
-import React, { useState, useRef, useCallback } from "react";
 import { Star } from "lucide-react";
 import Link from "next/link";
-
-import { CldImage } from "next-cloudinary";
-import Autoplay from "embla-carousel-autoplay";
+import React from "react";
 
 interface Review {
   reviewer_name: string;
@@ -61,18 +58,6 @@ const ReviewItem: React.FC<{ review: Review }> = React.memo(({ review }) => (
 ReviewItem.displayName = 'ReviewItem';
 
 const Reviews: React.FC = () => {
-  const [isClient, setIsClient] = useState(false);
-  const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
-
-  const handleMouseEnter = useCallback(() => plugin.current.stop(), []);
-  const handleMouseLeave = useCallback(() => plugin.current.reset(), []);
-
-  React.useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  if (!isClient) return null;
-
   return (
     <div>
       <div className="flex flex-row justify-center items-center w-full text-2xl font-bold">
