@@ -55,8 +55,8 @@ const RenderStars: React.FC<{ rating: number }> = React.memo(({ rating }) => {
 RenderStars.displayName = 'RenderStars';
 
 const ReviewItem: React.FC<{ review: Review }> = React.memo(({ review }) => (
-  <div className="p-2 border border-white rounded-lg py-3 sm:py-5 w-full h-[210px] ml-3">
-    <div className="flex w-full gap-3 items-end justify-end">
+  <div className="p-2 border  border-white rounded-lg py-3 sm:py-5 w-full h-[210px] ml-3">
+    <div className="flex w-full gap-3">
       <CldImage
         loading="lazy"
         width={45}
@@ -64,7 +64,7 @@ const ReviewItem: React.FC<{ review: Review }> = React.memo(({ review }) => (
         src={review.reviewer_picture_url}
         alt={`Image for ${review.reviewer_name}`}
       />
-      <h3 className="text-lg font-bold">{review.reviewer_name}</h3>
+      <h3 className="text-lg font-bold mt-2">{review.reviewer_name}</h3>
     </div>
     <div className="flex mt-2">
       <RenderStars rating={review.rating} />
@@ -93,16 +93,16 @@ const Reviews: React.FC = () => {
         What our customers say
       </div>
       <div className="flex flex-col gap-2 justify-center items-center w-full bg-primaryBlue-200 text-white py-7 px-4 mt-4">
-        <div className="flex gap-3">
+        <div className="flex w-full gap-3 items-end justify-end">
                  <Link
           href="https://www.google.com/search?hl=en-BR&gl=br&q=Wash+Me+Car+Wash,+1953+9th+Ave,+Longview,+WA+98632,+United+States&ludocid=4750013286135008027&lsig=AB86z5V2TG630eID1b_fI-RNBxns#lrd=0x54946c94ec9bed79:0x41eb6feac6768b1b,3"
-          className="bg-primaryGreen text-black px-3 py-2 rounded-lg text-lg mb-3 w-fit ml-auto"
+          className="bg-primaryGreen text-black px-3 py-2 rounded-lg text-lg mb-3 w-fit"
         >
           Write a review
         </Link>
                 <Link
                   href="https://www.google.com/maps/place/Wash+Me+Car+Wash/@46.14486,-122.9305678,17z/data=!3m1!4b1!4m17!1m8!4m7!1m0!1m5!1m1!1s0x54946c94ec9bed79:0x41eb6feac6768b1b!2m2!1d-122.9280156!2d46.1448855!3m7!1s0x54946c94ec9bed79:0x41eb6feac6768b1b!8m2!3d46.14486!4d-122.9279929!9m1!1b1!16s%2Fg%2F1tds6drw?entry=ttu"
-          className="bg-primaryGreen ml-3 text-black px-3 py-2 rounded-lg text-lg mb-3 w-fit ml-auto"
+          className="bg-primaryGreen ml-3 text-black px-3 py-2 rounded-lg text-lg mb-3 w-fit"
         >
           View More Reviews
         </Link>

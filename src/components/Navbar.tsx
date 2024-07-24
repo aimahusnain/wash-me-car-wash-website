@@ -54,11 +54,7 @@ const Navbar = () => {
                   <AlignJustify fill="white" size={27} />
                 </SheetTrigger>
                 <SheetContent
-                  className="flex-col flex gap-3 text-left items-start font-bold"
-                  style={{
-                    backgroundImage:
-                      "url(https://raw.githubusercontent.com/aimahusnain/Washme-CarWash-Images/main/bubbles.png)",
-                  }}
+                  className="flex-col flex gap-3 text-left text-xl items-start font-bold"
                 >
                   <SheetClose>
                     <Goy id="Our Services">Our Services</Goy>

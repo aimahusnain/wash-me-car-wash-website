@@ -27,13 +27,12 @@ const Home: React.FC = () => {
         alt="WashHouse Image"
         width={400}
         height={146}
-                      loading="lazy"
-
+          loading="lazy"
         className="w-full"
       />
       </Suspense>
 
-      {/* <Map /> */}
+      <Map /> 
       <Facilities />
       <WhatWeDo />
       <Team />
