@@ -56,12 +56,11 @@ RenderStars.displayName = 'RenderStars';
 
 const ReviewItem: React.FC<{ review: Review }> = React.memo(({ review }) => (
   <div className="p-2 border border-white rounded-lg py-3 sm:py-5 w-full h-[210px] ml-3">
-    <div className="flex gap-3 items-center">
+    <div className="flex w-full gap-3 items-end justify-end">
       <CldImage
         loading="lazy"
         width={45}
         height={45}
-        
         src={review.reviewer_picture_url}
         alt={`Image for ${review.reviewer_name}`}
       />
