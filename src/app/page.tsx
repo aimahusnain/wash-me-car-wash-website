@@ -31,7 +31,7 @@ const Home: React.FC = () => {
         className="w-full"
       />
       </Suspense>
-      <Map /> 
+      {/* <Map />  */}
       <Facilities />
       <WhatWeDo />
       <Team />
