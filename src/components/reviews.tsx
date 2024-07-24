@@ -16,24 +16,18 @@ const reviews: Review[] = [
   {
     reviewer_name: "Rich White",
     rating: 5,
-    reviewer_picture_url:
-      "https://res.cloudinary.com/dni4hpqo3/image/upload/v1721242842/Wash%20Me%20Car%20Wash%20Images/Reviews/ACg8ocLS4qNmrPf2IXpZF99eJaZjxaqVomQ94IOuFm98Lm-x_s40-c-rp-mo-br100_jrv2hp.webp",
-    message:
+       message:
       "These guys are always friendly, and they do a fantastic job!! Best car wash on the west coast, we a...",
   },
   {
     reviewer_name: "Shirley Simms",
     rating: 5,
-    reviewer_picture_url:
-      "https://res.cloudinary.com/dni4hpqo3/image/upload/v1721567433/ACg8ocJhWDWjzAbNedCS0zyGM4sjkMGoVOuzuZVfkL2emsc4ivSWaw_w36-h36-p-rp-mo-ba5-br100_mffyfd.png",
-    message:
+       message:
       "Oh my goodness these folks do a FANTASTIC job ! They hand wash your car! Making sure it's CLEAN!!! Highly recommend",
   },
   {
     reviewer_name: "Rick Foster",
     rating: 5,
-    reviewer_picture_url:
-      "https://res.cloudinary.com/dni4hpqo3/image/upload/v1721567486/unnamed_kxom9j.png",
     message:
       "Just moved to Longview and found a hand wash car wash.... they did a fantastic job and very reasonably priced.  I will be going there again , a lot better than machine washes.",
   },
@@ -55,15 +49,8 @@ const RenderStars: React.FC<{ rating: number }> = React.memo(({ rating }) => {
 RenderStars.displayName = 'RenderStars';
 
 const ReviewItem: React.FC<{ review: Review }> = React.memo(({ review }) => (
-  <div className="p-2 border  border-white rounded-lg py-3 sm:py-5 w-full h-[210px] ml-3">
-    <div className="flex w-full gap-3">
-      <CldImage
-        loading="lazy"
-        width={45}
-        height={45}
-        src={review.reviewer_picture_url}
-        alt={`Image for ${review.reviewer_name}`}
-      />
+  <div className="p-2 border border-white rounded-lg py-3 sm:py-5 w-full h-[210px] ml-3">
+    <div className="flex w-full">
       <h3 className="text-lg font-bold mt-2">{review.reviewer_name}</h3>
     </div>
     <div className="flex mt-2">
@@ -107,7 +94,7 @@ const Reviews: React.FC = () => {
           View More Reviews
         </Link>
  </div>
-        <div className="flex w-full h justify-center items-center">
+        <div className="flex flex-col md:flex-row gap-3 w-full h justify-center items-center">
               {reviews.map((review, index) => (
                 <div
                   key={index}
