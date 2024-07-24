@@ -25,13 +25,12 @@ const Home: React.FC = () => {
       <CldImage
         src="https://res.cloudinary.com/dni4hpqo3/image/upload/c_scale,h_40,q_70/v1720801124/Wash%20Me%20Car%20Wash%20Images/washhouse.webp"
         alt="WashHouse Image"
-        width={400}
-        height={146}
+        width={1300}
+        height={100}
           loading="lazy"
-        className="w-full"
       />
       </Suspense>
-      {/* <Map />  */}
+       <Map />  
       <Facilities />
       <WhatWeDo />
       <Team />

@@ -88,8 +88,8 @@ const Facilities = () => {
     <CldImage
       src={src}
       alt={alt}
-      width={100}
-      height={75}
+      width={66}
+      height={30}
       className={className}
       loading="lazy"
     />
