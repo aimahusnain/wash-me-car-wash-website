@@ -44,7 +44,6 @@ export function Contact() {
   }
 
   return (
-    <>
       <form
         onSubmit={handleSubmit}
         className="sm:max-w-sm w-full my-10 mx-auto flex flex-col items-center justify-center"
@@ -100,6 +99,5 @@ export function Contact() {
           Submit Form
         </Button>
       </form>
-    </>
   );
 }
