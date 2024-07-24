@@ -19,18 +19,19 @@ const LoadingPlaceholder = () => <div>Loading...</div>;
 
 const Home: React.FC = () => {
   return (
-    <div className='overflow-x-hidden'>
+    <div className='overflow-x-hidden border-'>
       <HeroSection />
       <Suspense fallback={<LoadingPlaceholder />}>
       <CldImage
         src="https://res.cloudinary.com/dni4hpqo3/image/upload/c_scale,h_40,q_70/v1720801124/Wash%20Me%20Car%20Wash%20Images/washhouse.webp"
         alt="WashHouse Image"
-        width={1300}
-        height={100}
+        width={300}
+        height={146}
           loading="lazy"
+        className="w-full"
       />
       </Suspense>
-       <Map />  
+      <Map /> 
       <Facilities />
       <WhatWeDo />
       <Team />
